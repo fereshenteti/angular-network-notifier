@@ -1,0 +1,11 @@
+<div
+  id="fh-network-badge"
+  [class]="'container ' + connectionStatus + ' ' + toggleBadge"
+>
+  <span>
+    {{ connectionMessage }}
+  </span>
+  <span class="network-badge-dismiss" (click)="dismissTopBadge()">
+    <i class="fa fa-times" aria-hidden="true"></i>
+  </span>
+</div>
