@@ -1,27 +1,75 @@
-# MyLibrary
+# Angular 8 Network Connection Notifier by Feres Henteti
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.25.
+Network Notifier is a simple light-weight library that notifies you whether when the network connection has been lost or re-established.
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm install network-notifier` to install this library.
 
-## Code scaffolding
+## Usage
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To use this library, just import its module into your app.module.ts
 
-## Build
+```typescript
+import { NetworkNotifierModule } from "network-notifier";
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+and add it to your imports in the @NgModule annotation
 
-## Running unit tests
+```typescript
+@NgModule({
+    ...
+    imports: [..., NetworkNotifierModule],
+    ...
+})
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+and then place
 
-## Running end-to-end tests
+```html
+<fh-network-notifier></fh-network-notifier>
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+wherever you want into your template, preferably in the root template of your project.
 
-## Further help
+## Test it!
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+To test if the library works fine, open the Chrome Debugger Console so you can simulate connection states (on, off, slow 3G, ...).
+Open Chrome Debugger Console (click on F12, or right click -> inspect element), go to 'Network' section, and you can find a network status switcher on the top.
+
+## Customize the notification popup!
+
+For the moment, you can customize the following attributes:
+
+```html
+<fh-network-notifier
+  [_timeout]="timeout"
+  [onlineMessage]="onlineMessage"
+  [onlineBgColor]="onlineBgColor"
+  [onlineTextColor]="onlineTextColor"
+  [offlineMessage]="offlineMessage"
+  [offlineBgColor]="offlineBgColor"
+  [offlineTextColor]="offlineTextColor"
+>
+</fh-network-notifier>
+```
+
+### Attributes
+
+| Attribute        | Default value       | Type   | Meaning                                                                                                                                                      |
+| ---------------- | ------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| timeout          | 3000                | number | The popup will last 3 seconds by default. You can pass the duration you want, or pass 0 if you want to dismiss it only by after clicking the dismiss button. |
+| onlineMessage    | You're back online! | string | The message that will appear when the app regains access to the network.                                                                                     |
+| onlineBgColor    | #61c688             | string | The background color of the online popup.                                                                                                                    |
+| onlineTextColor  | white               | string | The text color of the online popup.                                                                                                                          |
+| offlineMessage   | You are offline!    | string | The message that will appear when the app loses network connection.                                                                                          |
+| offlineBgColor   | #ea3d0d             | string | The background color of the offline popup.                                                                                                                   |
+| offlineTextColor | white               | string | The text color of the offline popup.                                                                                                                         |
+
+> Note: Further customizations and popup types will be available soon. Your suggestions are welcome :D
+
+### Need help?
+
+If you need further help, support, or have any other suggestions, please contact me at `fereshenteti@gmail.com`.
+
+### Enjoy :D
