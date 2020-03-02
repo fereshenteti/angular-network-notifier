@@ -31,14 +31,12 @@ export class NetworkNotifierService implements OnDestroy {
     this.subscriptions.push(
       this.onlineEvent.subscribe(e => {
         this.connectionStatus.next("online");
-        console.log("online");
       })
     );
 
     this.subscriptions.push(
       this.offlineEvent.subscribe(e => {
         this.connectionStatus.next("offline");
-        console.log("offline");
       })
     );
   }

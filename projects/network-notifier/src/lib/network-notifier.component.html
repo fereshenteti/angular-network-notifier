@@ -1,6 +1,8 @@
 <div
   id="fh-network-badge"
-  [class]="'container ' + connectionStatus + ' ' + toggleBadge"
+  [style.color]="textColor"
+  [style.backgroundColor]="bgColor"
+  [class]="'container ' + toggleBadge"
 >
   <span>
     {{ connectionMessage }}
