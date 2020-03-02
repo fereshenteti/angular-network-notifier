@@ -1,5 +1,6 @@
 {
   "name": "my-library",
+  "description": "Angular 8 Network Connection Notifier",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -50,5 +51,15 @@
     "tsickle": "^0.37.0",
     "tslint": "~5.15.0",
     "typescript": "~3.5.3"
-  }
+  },
+  "keywords": [
+    "angular",
+    "notifier",
+    "network"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fereshenteti/angular-network-notifier/issues"
+  },
+  "homepage": "https://github.com/fereshenteti/angular-network-notifier#readme"
 }
